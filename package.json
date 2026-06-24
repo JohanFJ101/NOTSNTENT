@@ -1,0 +1,23 @@
+{
+  "name": "NOTSNTENT",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "Local AI assistant modeled on a 3 level hierarchy",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r clean"
+  },
+  "author": "JohanFJ",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.9.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module"
+}
