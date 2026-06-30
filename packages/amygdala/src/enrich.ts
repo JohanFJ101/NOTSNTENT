@@ -3,12 +3,12 @@
 
 import type { TelegramMessage, EnrichedMessage } from '@brain/core'
 
-const REASONING_WORDS = [
+const REASONING_WORDS = [ //TODO: I doubt ill be doing stuff like this in a message. Make smarter.
     'analyze', 'compare', 'explain why', 'plan', 'restructure',
     'summarize'
 ]
 
-const TIME_REFERENCES = [
+const TIME_REFERENCES = [ //TODO: Make TIME_REFERENCES smarter.
     'last week', 'last month', 'over the past',
     'yesterday', 'this week'
 ]
@@ -35,7 +35,7 @@ export function enrich(
         ...msg,
         messageLength,
         reasoningWords,
-        hotMemoryMiss,
+        hotMemoryMiss,  
         tier: isComplex ? 'DEL' : 'NI',
     }
 }
