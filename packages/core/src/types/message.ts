@@ -7,9 +7,10 @@ export type TelegramMessage = {
 // These are all the fields that will determine how "complex" a message is to make sure its smartly routed between the models
 
 export type ComplexitySignals = {
-    messageLength: number 
+    messageLength: number
     reasoningWords: boolean
-    hotMemoryMiss: boolean 
+    hotMemoryMiss: boolean
+    timeReference: boolean
 }
 
 //The 2 tiers used.

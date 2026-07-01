@@ -35,7 +35,8 @@ export function enrich(
         ...msg,
         messageLength,
         reasoningWords,
-        hotMemoryMiss,  
+        hotMemoryMiss,
+        timeReference,
         tier: isComplex ? 'DEL' : 'NI',
     }
 }
