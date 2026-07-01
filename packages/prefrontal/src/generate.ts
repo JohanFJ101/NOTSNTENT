@@ -14,7 +14,25 @@ const MODEL_MAP: Record<'NI' | 'DEL', string> = {
   DEL: 'qwen3:8b',
 }
 
+// Number of prior memory lines ("role: text") to prepend to the prompt.
+const MAX_CONTEXT_ENTRIES = 10
+
 const OLLAMA_URL = 'http://localhost:11434/api/generate'
+
+function buildPrompt(context: string[], userText: string): string {
+  const recent = context.slice(-MAX_CONTEXT_ENTRIES)
+  if (recent.length === 0) {
+    return userText
+  }
+
+  return [
+    'Recent conversation history (oldest first):',
+    ...recent,
+    '',
+    'Reply to the latest message:',
+    `user: ${userText}`,
+  ].join('\n')
+}
 
 const logger = createLogger('prefrontal')
 
@@ -30,11 +48,10 @@ export async function generate(handoff: TierHandoff): Promise<PrefrontalResponse
 
   const start = Date.now()
 
-  // Placeholder — will be merged into the prompt once Hippocampus is real.
   const context = await getContext()
 
   const model = MODEL_MAP[handoff.tier]
-  const prompt = handoff.message.text
+  const prompt = buildPrompt(context, handoff.message.text)
 
   try {
     const response = await fetch(OLLAMA_URL, {

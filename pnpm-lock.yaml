@@ -55,6 +55,9 @@ importers:
       '@brain/core':
         specifier: workspace:*
         version: link:../core
+      '@brain/hippocampus':
+        specifier: workspace:*
+        version: link:../hippocampus
       '@brain/prefrontal':
         specifier: workspace:*
         version: link:../prefrontal
@@ -115,6 +118,9 @@ importers:
       '@brain/core':
         specifier: workspace:*
         version: link:../core
+      '@brain/hippocampus':
+        specifier: workspace:*
+        version: link:../hippocampus
     devDependencies:
       '@types/node':
         specifier: ^20.0.0

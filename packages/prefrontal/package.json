@@ -12,7 +12,8 @@
         "clean": "rm -rf dist"
     },
     "dependencies": {
-        "@brain/core": "workspace:*"
+        "@brain/core": "workspace:*",
+        "@brain/hippocampus": "workspace:*"
     },
     "devDependencies": {
         "typescript": "^5.0.0",
