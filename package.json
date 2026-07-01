@@ -19,5 +19,8 @@
       "onFail": "download"
     }
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "grammy": "^1.44.0"
+  }
 }

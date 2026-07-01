@@ -1,0 +1,22 @@
+{
+    "name": "@brain/hippocampus",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run",
+        "clean": "rm -rf dist"
+    },
+    "dependencies": {
+        "@brain/core": "workspace:*"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "@types/node": "^20.0.0",
+        "vitest": "^1.0.0"
+    }
+}

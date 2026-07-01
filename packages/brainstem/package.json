@@ -1,0 +1,25 @@
+{
+    "name": "@brain/brainstem",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "typecheck": "tsc --noEmit",
+        "start": "node dist/index.js",
+        "clean": "rm -rf dist"
+    },
+    "dependencies": {
+        "@brain/core": "workspace:*",
+        "@brain/amygdala": "workspace:*",
+        "@brain/thalamus": "workspace:*",
+        "@brain/prefrontal": "workspace:*",
+        "grammy": "^1.21.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "@types/node": "^20.0.0"
+    }
+}
